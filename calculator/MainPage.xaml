@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="calculator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:calculator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="800" Height="1000">
+    
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- NUMBERS -->
+        <Button x:Name="Button_7" Content="7" Margin="65,324,635,576" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_8" Content="8" Margin="169,324,531,576" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_9" Content="9" Margin="273,324,427,576" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_4" Content="4" Margin="65,428,635,472" Click="Button_Click" FontSize="64" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_5" Content="5" Margin="169,428,531,472" Click="Button_Click" FontSize="64" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_6" Content="6" Margin="273,428,427,472" Click="Button_Click" FontSize="64" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_1" Content="1" Margin="65,532,635,368" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_2" Content="2" Margin="169,532,531,368" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_3" Content="3" Margin="273,532,427,368" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_0" Content="0" Margin="169,636,531,264" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_comma" Content="." Margin="273,636,427,264" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+
+        <!--  -->
+        <Button x:Name="Button_divide" Content="/" Margin="377,220,323,680" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_multiply" Content="x" Margin="377,324,323,576" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_subtract" Content="-" Margin="377,532,323,368" Click="Button_Click" FontSize="64" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_add" Content="+" Margin="377,428,323,472" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch"/>
+
+        <Button x:Name="Button_equals" Content="=" Margin="377,636,323,264" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" IsEnabled="False" HorizontalAlignment="Stretch"/>
+
+        <Button x:Name="Button_ce" Content="CE" Margin="273,220,427,680" VerticalAlignment="Stretch" Click="Button_Click" FontSize="64" HorizontalAlignment="Stretch" Width="Auto" Height="Auto"/>
+        <Button x:Name="Button_History" Content="History" Margin="482,740,190,196" VerticalAlignment="Stretch" Click="History_Click" FontSize="32" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_CtoF" Content="°C -&gt; °F" Margin="65,740,607,196" VerticalAlignment="Stretch" Click="CtoF_Click" FontSize="26" HorizontalAlignment="Stretch"/>
+        <Button x:Name="Button_FtoC" Content="°F -&gt; °C" Margin="197,740,475,196" VerticalAlignment="Stretch" Click="CtoF_Click" FontSize="26" HorizontalAlignment="Stretch"/>
+        <TextBox x:Name="ConsoleBox" Margin="60,55,324,897" Text="" TextWrapping="Wrap" FontSize="16" TextAlignment="Right" KeyDown="Console_KeyDown"/>
+        <TextBlock x:Name="ConsoleTitle" Margin="60,34,326,939" Text="User Console:" TextWrapping="Wrap" FontSize="16" FontWeight="Bold"/>
+        <Border BorderBrush="#FF787878" BorderThickness="1" Margin="60,151,323,785" Width="Auto" Height="Auto">
+            <TextBlock x:Name="inputBox" HorizontalAlignment="Stretch" Margin="8,0,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="32" FontWeight="Normal" TextAlignment="Right" FocusVisualSecondaryBrush="Transparent"/>
+
+        </Border>
+        <Border BorderBrush="#FF787878" BorderThickness="1" Margin="482,151,62,786" Width="Auto" Height="Auto">
+            <TextBlock x:Name="OutputBox" HorizontalAlignment="Stretch" Margin="9,10,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="32" FontWeight="Normal" TextAlignment="Right"/>
+
+        </Border>
+        <Border BorderBrush="#FF787878" BorderThickness="1" Margin="482,218,62,265" Width="Auto" Height="Auto">
+            <TextBlock x:Name="HistoryBox" HorizontalAlignment="Stretch" Margin="0,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Stretch" FontSize="16" FontWeight="Normal" TextAlignment="Right"/>
+
+        </Border>
+        <TextBlock x:Name="instrTextBlock" Margin="61,125,325,848" Text="Input number:" TextWrapping="Wrap" FontSize="16" FontWeight="Bold"/>
+        <Border x:Name="DebugConsoleBorder" BorderBrush="#FF787878" BorderThickness="1" Margin="700,42,-150,-17" Visibility="Collapsed">
+            <TextBlock x:Name="DebugConsole" HorizontalAlignment="Left" Margin="9,9,0,0" Text="DEBUG" TextWrapping="Wrap" VerticalAlignment="Top" Height="954" Width="169" FontSize="16" FontWeight="Normal" TextAlignment="Right"/>
+
+        </Border>
+        <Button x:Name="Button_Clear" Content="Clear" Margin="615,739,62,197" VerticalAlignment="Stretch" Click="Button_Clear_Click" FontSize="32" HorizontalAlignment="Stretch" Width="Auto"/>
+
+    </Grid>
+</Page>
